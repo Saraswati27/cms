@@ -1,0 +1,61 @@
+<% @page1_title="Pages" %>
+
+<%= link_to "Back to Topics ", controller: "dummy", action: 'index' , class: "back-link" %>
+
+
+<div class ="Pages Index">
+	<h2> Pages </h2>
+	
+	<style>
+      table, th, td {
+      border: 1px solid black;
+      border-collapse: collapse;
+     }
+     th, td {
+       padding: 15px;
+      }
+    </style>
+    
+	
+
+	<%= link_to "Add New Page ", controller: "pages", action: 'new', topic_id: @topic.id, class: "action new" %>
+
+
+	<br>
+    <br>
+	<table class ="listing" summary ="Page List" style ="width:100%>
+		<tr class ="header">
+			<th> Position</th>
+			<th>Topic</th> 
+			<th>Page</th>
+			
+			<th> Actions</th>
+		</tr>
+		<tr>
+		</tr>
+		
+        <% @page.each do |pg| %>
+		  <tr class="<%= cycle('odd','even') %>">
+		     <td> <%= pg.position %></td>
+		     <td> <%= @topic.name %></td>
+		     <td> <%= pg.name %></td>
+		    
+		     
+		     <td class = "actions">
+		     
+		     	
+                 <%= link_to "Sections", controller: 'scn', action:'index', id: pg.id, topic_id: @topic.id , class: "action show" %>
+
+		        <%= link_to "Show", action:'show', id: pg.id, topic_id: @topic.id , class: "action show" %>
+		        <%= link_to "Edit", action:'edit', id: pg.id, topic_id: @topic.id , class: "action edit" %>
+		        <%= link_to "Delete", action:'delete', id: pg.id, topic_id: @topic.id , class: "action delete" %>
+
+		        
+		      </td>
+		        
+
+		     </tr> 
+		    <% end %>
+		    </table>
+		    </div> 
+		     	

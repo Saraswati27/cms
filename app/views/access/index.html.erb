@@ -1,0 +1,13 @@
+<% @page_titile ="admin Menu" %>
+_  layout 'admin'
+   <div class ="Menu">
+   <h2> Admin Menu</h2>
+
+    <div class="identity"> Logged in as:</div>
+    <ul>
+    	<li> <%= link_to("Manage Topics",:controller='topic1s') %></li>
+    	<li> <%= link_to("Manage Userss",:controller='#') %></li>
+		<li> <%= link_to("Log Out",:controller='topic1s') %></li>
+	</ul>
+</div>
+

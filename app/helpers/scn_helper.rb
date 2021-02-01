@@ -1,0 +1,2 @@
+module ScnHelper
+end

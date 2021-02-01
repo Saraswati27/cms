@@ -1,0 +1,42 @@
+
+<%= link_to "Back to List ", controller: "pages", action: 'index', topic_id: @topic.id, class: "back-link"  %>
+
+<div class ="Page Edit">
+	<h2> Edit Page</h2>
+
+	<%= form_for(:page1s, url: {action: 'update', id: @page1s.id, topic_id: @topic.id }) do |t| %>
+
+	  <table summary="Topic form fields">
+  
+		<tr>
+			<th> Page Name </th>
+			<td> <%= t.text_field(:name)  %></td>
+		</tr>
+		
+		<tr>
+			<th> Weblink </th>
+			<td> <%= t.text_field(:weblink)  %></td>
+		</tr>
+
+		<tr>
+			<th> Position </th>
+			<td> <%= t.text_field(:position)  %></td>
+		</tr>
+		
+		<tr>
+			<th> Visible? </th>
+			<td> <%= t.text_field(:visible)  %></td>
+		</tr>
+	</table>
+	<div class = "form-button">
+		<%= submit_tag("update Page") %>
+	</div>
+	<% end %>	
+
+
+</div>
+		
+
+
+		
+		     	

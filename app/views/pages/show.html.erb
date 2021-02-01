@@ -1,0 +1,50 @@
+<% @page_title="Pages" %>
+
+
+
+<%= link_to "Back to List ", controller: "pages", action: 'index', topic_id: @topic.id, class: "back-link"  %>
+
+<div class ="Page Show">
+
+	<h2> Show Pages</h2>
+
+	
+	<table summary="Page detail view">
+
+		<tr>
+			<th> Name </th>
+			<td> <%= @page1s.name  %></td>
+		</tr>
+
+		<tr>
+			<th> Weblink </th>
+			<td> <%= @page1s.weblink  %></td>
+		</tr>
+		
+		<tr>
+			<th> Position </th>
+			<td> <%= @page1s.position %></td>
+		</tr>
+		
+		<tr>
+			<th> Visible </th>
+			<td> <%= @page1s.visible ? 'true' : 'false'  %></td>
+		</tr>
+		
+		<tr>
+			<th> Created at </th>
+			<td> <%= @page1s.created_at %></td>
+		</tr>
+		
+		<tr>
+			<th> Updated at </th>
+			<td> <%= @page1s.updated_at %></td>
+		</tr>
+
+	</table>
+</div>
+		
+
+
+		
+		     	

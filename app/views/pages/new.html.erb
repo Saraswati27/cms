@@ -1,0 +1,38 @@
+
+<%= link_to "Back to List ", controller: "pages", action: 'index', topic_id: @topic.id, class: "back-link"  %>
+
+<div class ="Page New">
+	<h2> Create New Page</h2>
+
+	<%= form_for(:page1s, url: {controller: "pages", action: 'create', topic_id: @topic.id }) do |t| %>
+
+	  <table summary="Page form fields">
+
+        <tr>
+			<th> Topic id </th>
+			<td> <%= t.text_field(:topic1_id)  %></td>
+		</tr> 
+		<tr>
+			<th> Page Name </th>
+			<td> <%= t.text_field(:name)  %></td>
+		</tr>
+		
+		
+		<tr>
+			<th> Position </th>
+			<td> <%= t.text_field(:position)  %></td>
+		</tr>
+		
+		
+
+	</table>
+	<div class = "form-button">
+		<%= submit_tag("create Page") %>
+	</div>
+	<% end %>	
+</div>
+		
+
+
+		
+		     	

@@ -1,0 +1,37 @@
+
+<%= link_to "Back to List ", action: 'index', class: "back-link"  %>
+
+<div class ="topic Edit">
+	<h2> Edit Topic</h2>
+
+	<%= form_for(:topic1s, url: {action: 'update', id: @topic1s.id}) do |t| %>
+
+	  <table summary="Topic form fields">
+
+		<tr>
+			<th> Name </th>
+			<td> <%= t.text_field(:name)  %></td>
+		</tr>
+		
+		<tr>
+			<th> Position </th>
+			<td> <%= t.text_field(:position)  %></td>
+		</tr>
+		
+		<tr>
+			<th> Visible? </th>
+			<td> <%= t.text_field(:visible)  %></td>
+		</tr>
+	</table>
+	<div class = "form-button">
+		<%= submit_tag("update Topic") %>
+	</div>
+	<% end %>	
+
+
+</div>
+		
+
+
+		
+		     	

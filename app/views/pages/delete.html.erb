@@ -1,0 +1,17 @@
+<%= link_to "Back to Page List ", controller: "pages", action: 'index', topic_id: @topic.id, class: "back-link"  %>
+
+<div class ="Page Delete">
+	<h2> Delete Page</h2>
+
+	<%= form_for(:page1s, url: {action: 'destroy'}, id: @page.id ) do |t| %>
+     
+    <p> Are you sure you want to permantly delete this Page></p>
+
+    <p class="refernce-name"> <%= @page.name %> </p>
+
+    <div class ="form-buttons">  
+    	<%= submit_tag("Delete Page") %>
+    </div>
+
+    <% end %>
+</div>

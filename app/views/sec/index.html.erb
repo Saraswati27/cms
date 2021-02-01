@@ -1,0 +1,59 @@
+<% @page1_title="Sections" %>
+
+<%= link_to "Back to Topics ", controller: "pages", action: 'index' , class: "back-link" %>
+
+
+<div class ="section Index">
+	<h2> Sections </h2>
+	
+	<style>
+      table, th, td {
+      border: 1px solid black;
+      border-collapse: collapse;
+     }
+     th, td {
+       padding: 15px;
+      }
+    </style>
+    
+	
+
+	<%= link_to "Add New Section ", controller: "section", action: 'new', id: @page1s.id, class: "action new" %>
+
+
+	<br>
+    <br>
+	<table class ="listing" summary ="Section List" style ="width:100%>
+		<tr class ="header">
+			<th> Name</th>
+			<th>Position</th> 
+			<th>Content</th>
+			<th> Actions</th>
+		</tr>
+		<tr>
+		</tr>
+		
+        <% @sc.each do |s| %>
+		  <tr class="<%= cycle('odd','even') %>">
+		     
+		     <td> <%= s.name %></td>
+		     <td> <%= s.position %></td>
+		     <td> <%= s.content %></td>
+		     
+		     <td class = "actions">
+		     
+		     	
+                 
+		        <%= link_to "Show", action:'show', id: c.id , class: "action show" %>
+		        <%= link_to "Edit", action:'edit', id:  c.id  , class: "action edit" %>
+		        <%= link_to "Delete", action:'delete', id: c.id  , class: "action delete" %>
+
+		        
+		      </td>
+		        
+
+		     </tr> 
+		    <% end %>
+		    </table>
+		    </div> 
+		     	

@@ -1,0 +1,67 @@
+
+
+
+<% @topics_title="Topics" %>
+
+<div class ="Topics Index">
+	<h2> Topics</h2>
+	<style>
+      table, th, td {
+      border: 1px solid black;
+      border-collapse: collapse;
+     }
+     th, td {
+       padding: 15px;
+      }
+
+   </style>
+
+	 
+
+
+
+    
+
+	<%= link_to "Add New Topics", action: 'new' , class: "action new" %>
+
+	<br>
+    <br>
+	<table class ="listing" summary ="Topics List" style ="width:100%>
+
+		<tr class = "header">
+			<th> Position</th>
+			<th>Topic</th>   
+			<th>Visible</th>
+			<th>Pages</th>
+			<th> Actions</th>
+		</tr>
+		
+		<% @topic1s.each do |topic| %>
+        <tr class= "db">
+		  
+		     <td> <%= topic.position %></td>
+		     <td> <%= topic.name %></td>
+		     <td class = "center"><%= topic.visible  %></td>
+		     <td class = "center"> <%= topic.page1s.size %></td>
+
+		     <td class = "actions">
+		     
+		     	<%= link_to "ViewPages", controller: 'pages', action: 'index', topic_id: topic.id , class: "action index" %>
+		        <%= link_to "Show",  action:'show', id: topic.id , class: "action show" %>
+		        <%= link_to "Edit",action:'edit', id: topic.id, class: "action edit" %>
+		        <%= link_to "Delete",action:'delete', id: topic.id, class: "action delete" %>
+		      </td>
+		        
+
+		     </tr> 
+		    <% end %>
+		    </table>
+		    <br>
+            <br>
+            <br>
+            <br>
+	
+	
+		    <button type = "button" class = "close" data-dismiss = "alert"> EXIT </button>
+		    </div> 
+		     	
